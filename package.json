@@ -32,6 +32,7 @@
     "@types/koa-router": "^7.0.40",
     "@types/koa-webpack": "^5.0.1",
     "@types/lodash": "^4.14.121",
+    "@types/nodemailer": "^6.1.0",
     "@types/sendmail": "^1.4.2",
     "acorn": "^6.1.1",
     "apollo-server-koa": "^2.4.8",
