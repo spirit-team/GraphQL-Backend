@@ -3,6 +3,7 @@ FROM centos:7.6.1810 AS builder
 WORKDIR /
 
 ENV NPM_CONFIG_LOGLEVEL notice
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 
 RUN yum install -y python2 gcc curl openssl ca-certificates wget make gcc-c++ kernel-devel &&\
 wget --no-check-certificate https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodejs-12.9.1-1nodesource.x86_64.rpm &&\
@@ -21,6 +22,8 @@ RUN npm run build
 
 FROM centos:7.6.1810
 WORKDIR /
+
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 
 RUN yum install -y python2 gcc curl openssl ca-certificates wget make gcc-c++ kernel-devel &&\
 wget --no-check-certificate https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodejs-12.9.1-1nodesource.x86_64.rpm &&\
@@ -41,7 +44,9 @@ ldconfig &&\
 yum update -y
 
 WORKDIR /app
+
 COPY --from=builder /build /app
+ENV NODE_TLS_REJECT_UNAUTHORIZED=1
 
 CMD npm run production
 
