@@ -6,8 +6,8 @@ ENV NPM_CONFIG_LOGLEVEL notice
 ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 
 RUN yum install -y python2 gcc curl openssl ca-certificates wget make gcc-c++ kernel-devel &&\
-wget --no-check-certificate https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodejs-12.9.1-1nodesource.x86_64.rpm &&\
-rpm -ivh nodejs-12.9.1-1nodesource.x86_64.rpm &&\
+wget --no-check-certificate https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodejs-12.20.0-1nodesource.x86_64.rpm &&\
+rpm -ivh nodejs-12.20.0-1nodesource.x86_64.rpm &&\
 yum install -y nodejs &&\
 yum update -y
 
@@ -26,8 +26,8 @@ WORKDIR /
 ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 
 RUN yum install -y python2 gcc curl openssl ca-certificates wget make gcc-c++ kernel-devel &&\
-wget --no-check-certificate https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodejs-12.9.1-1nodesource.x86_64.rpm &&\
-rpm -ivh nodejs-12.9.1-1nodesource.x86_64.rpm &&\
+wget --no-check-certificate https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodejs-12.20.0-1nodesource.x86_64.rpm &&\
+rpm -ivh nodejs-12.20.0-1nodesource.x86_64.rpm &&\
 yum install -y nodejs
 
 WORKDIR /etc/yum.repos.d
